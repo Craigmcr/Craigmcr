@@ -1,0 +1,159 @@
+                body {
+                    font-family: Arial;
+                    background:rgb(251,544,63);
+                    background:radial-gradient(circle,rgba(251,544,63,1)0%,rgba(255,171,0,1)100%);
+                }
+
+                input {
+                    position:relative;
+                    top:-55px;
+                    left:-120px;
+                    padding:10px;
+                    font-size:14px;
+                    border-radius:15px;
+                    border: 1px solid black;
+                    width:200px;
+                }
+
+                label {
+                    position:relative;
+                    top:-47px;
+                    width:200px;
+                    float:left;
+                }
+
+                #wrapper {
+                    position:relative;
+                    top:-750px;
+                    width:550px;
+                    margin-left:20px;
+                    z-index:2;
+                }
+
+                #form-element {
+                    margin-bottom:10px;
+                }
+
+                #loginBtn {
+                    position:relative;
+                    top:-20px;
+                    left:-400px;
+                }
+
+                #signUpBtn {
+                    position:relative;
+                    top:px;
+                    left:-471px;
+                }
+
+                #signupInfo {
+                    position: relative;
+                    top:-23px;
+                }
+
+                #h3_1 {
+                    position:relative;
+                    top:15px;
+                }
+
+                h1 {
+                    font-Size:30pt;
+                }
+
+                h4 {
+                    position:relative;
+                    top:15px;
+                }
+
+                #stylebar1 {
+                    background-color:yellow;
+                    border-style:groove;
+                    border-width:10px;
+                    border-radius:20px;
+                    padding:5px;
+                    position:relative;
+                    z-index:2;
+                }
+
+                #stylebar2 {
+                    background-color:orange;
+                    padding:5px;
+                    border-style:groove;
+                    border-width:10px;
+                    border-radius:20px;
+                    position:relative;
+                    top:-40px;
+                    z-index:1;
+                }
+
+                #stylebar3 {
+                    background-color:#FFFFFF;
+                    padding:5px;
+                    border-style:groove;
+                    border-width:10px;
+                    border-radius:10px;
+                    position:relative;
+                    top:-80px;
+                    z-index:0;
+                }
+
+                #menuBar {
+                    background-color:#FFFFFF;
+                    border-style:groove;
+                    border-radius:10px;
+                    border-width:5px;
+                    position:relative;
+                    top:-50px;
+
+                }
+
+                #menuBarBtns {
+                    display:grid;
+                    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+                    position:relative;
+                    left:50px;
+                }
+
+                #foodMenuDiv{
+                    position:relative;
+                    top:0px;
+                    left:0px;
+
+                }
+
+                #animationDiv {
+                    background-color:#FFFFFF;
+                    width:100%;
+                    height:50%;
+                    border-radius:10px;
+                }
+
+                iframe{
+                    width:100%;
+                    height:100%;
+                }
+
+                #menuBarBtn0 {
+                    background:rgb(251,544,63);
+                    background:radial-gradient(circle,rgba(251,544,63,1)0%,rgba(255,171,0,1)100%);
+                }
+
+                #menuBarBtn1 {
+                    background:rgb(251,544,63);
+                    background:radial-gradient(circle,rgba(251,544,63,1)0%,rgba(255,171,0,1)100%);
+                }
+
+                #menuBarBtn2 {
+                    background:rgb(251,544,63);
+                    background:radial-gradient(circle,rgba(251,544,63,1)0%,rgba(255,171,0,1)100%);
+                }
+
+                #menuBarBtn3 {
+                    background:rgb(251,544,63);
+                    background:radial-gradient(circle,rgba(251,544,63,1)0%,rgba(255,171,0,1)100%);
+                }
+
+                #menuBarBtn4 {
+                    background:rgb(251,544,63);
+                    background:radial-gradient(circle,rgba(251,544,63,1)0%,rgba(255,171,0,1)100%);
+                }
