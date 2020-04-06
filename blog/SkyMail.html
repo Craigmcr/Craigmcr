@@ -1,0 +1,198 @@
+<html>
+
+    <head>
+
+        <title>SkyMail</title>
+
+        <script src="jquery.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+        <style type="text/css">
+
+            #sideMenuDiv {
+                display:none;
+            }
+
+            #externalDiv {
+                display:none;
+            }
+
+            textarea {
+                resize:none;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container-secondary">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                        <button style="position:relative;right:6px;top:-11px;" id="menuBtn" class="btn btn-outline-info" type="button" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" >MENU
+                        </button>
+                        <a class="navbar-brand" href="#"><img style="position:relative;top:-5px;" src="mail.png" width="50px" height="50px"><span style="position:relative;top:-5px;font-family:Rockwell;">Sky Mail</span></a>
+                            <form style="" class="form-inline">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-info my-2 my-sm-0" id="menuSearchBtn" role="button" type="submit"><img src="search.png" width="30px"></button>
+                            </form>
+
+                    </nav>
+
+
+                    <div style="width:100px;height:92%;float:left;" id="sideMenuDiv" class="container bg-secondary">
+                        <ul class="nav flex-column row">
+                            <li class="nav-item">
+                                <button style="position:relative;left:15px;" type="button" id="newEmailBtn" role="button" class="btn btn-md btn-info"><img src="add.png" width="30px"></button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link active">
+                                <a><button type="button" id="inboxBtn" role="button" class="btn-sm btn-block btn-info">Inbox</button></a>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <a><button type="button" id="starredBtn" role="button" class="btn-sm btn-block btn-info">Starred</button></a>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <a><button type="button" id="importantBtn" role="button" class="btn-sm btn-block btn-info">Important</button></a>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <a><button type="button" id="outboxBtn" role="button" class="btn-sm btn-block btn-info">Outbox</button></a>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <a><button type="button" id="sentBtn" role="button" class="btn-sm btn-block btn-info">Sent</button></a>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <a><button type="button" id="spamBtn" role="button" class="btn-sm btn-block btn-info">Spam</button></a>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <button type="button" id="deletedBtn" role="button" class="btn-sm btn-block btn-info">Deleted</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                        <nav style="border-bottom:1px solid grey;" class="navbar navbar-expand navbar-light bg-light">
+                            <div class="collapse navbar-collapse" id="altMenuDiv">
+                                <ul class="navbar-nav mr-auto">
+                                    <li>
+                                        <a class="nav-item"><button class="btn btn-light" id="refreshBtn" role="button"><img src="refresh.jpg" width="30px"></button></a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn btn-light" id="moreBtn" role="button"><img src="more.png" width="30px"></button>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                            <a class="dropdown-item" href="#">Mark all as read</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item disabled text-muted">Select messages to see more actions</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn btn-light" id="settingsBtn" role="button"><img src="setting.png" width="30px"></button>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                            <a class="dropdown-item" href="#">Configure inbox</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item">Settings</a>
+                                            <a class="dropdown-item">Themes</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item">Support</a>
+                                            <a class="dropdown-item">Help</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <nav style="border-bottom:1px solid grey;" class="navbar navbar-expand navbar-light bg-light">
+                            <div class="collapse navbar-collapse" id="externalActiveDiv">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn btn-light" id="actInboxBtn" role="button"><h4>Inbox</h4></button>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="container-fluid">
+                            <div  style="width:100%;height:70%;" class="bg-secondary" id="externalDiv">
+                                <span><button class="btn" id="exitexternalDivBtn" role="button">&times</button></span>
+                                <button style="position:relative;top:420px;left:750px;" type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ...
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+
+
+
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            function menuSideDivHoverToggle(stringSelector) {
+                $(stringSelector).mouseenter(function(handlerIn){
+                    $("#sideMenuDiv").animate({
+                        width: "160px"
+                    }, 600, function(){
+                        $(stringSelector).mouseleave(function(){
+                            $("#sideMenuDiv").animate({
+                                width: "100px"
+                            }, 1000);
+                        });
+                    });
+                });
+            }
+
+            function fadeInOutDiv(stringSelector) {
+                $(stringSelector).click(faddingIn);
+            }
+
+            function faddingIn() {
+                $("#externalDiv").fadeIn(600);
+            }
+
+            menuSideDivHoverToggle("#sideMenuDiv");
+
+            fadeInOutDiv("#actInboxBtn");
+
+                $("#menuBtn").click(function(){
+                    $("#sideMenuDiv").fadeToggle()
+                });
+
+                $("#exitexternalDivBtn").click(function(){
+                    $("#externalDiv").fadeOut(600);
+                });
+
+        })
+
+        </script>
+
+    </body>
+
+</html>
