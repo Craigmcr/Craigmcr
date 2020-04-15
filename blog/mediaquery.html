@@ -1,0 +1,365 @@
+<html>
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <script src="jquery-ui/jquery-ui.js"></script>
+
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+        <title>SkyMail</title>
+
+        <style type="text/css">
+
+            #brandName {
+                width:30px;
+                height:30px;
+                position:relative;
+                right:5px;
+            }
+
+            #menuBrandName {
+
+            font-family:Rockwell;
+            color:black;
+
+            }
+
+            #menuBtn {
+
+                display:none;
+
+            }
+
+            #settingBtn {
+
+                display:none;
+
+            }
+
+            #sideMenuDiv {
+                display:none;
+                float: left;
+            }
+
+            #externalActiveDiv {
+
+                border-bottom:1px solid black;
+
+            }
+
+            #externalDiv {
+                display:none;
+                width:100%;
+                height:75%;
+            }
+
+            textarea {
+                resize:none;
+                width:100%;
+                height:90%;
+            }
+
+            #modalcontent {
+                height:80%;
+            }
+
+            h5 {
+                color:white;
+            }
+
+            @media (min-width: 768px) {
+
+            #menuBrandName {
+
+            font-family:Rockwell;
+
+            }
+
+            #navbarMenuToggler {
+
+                display:none;
+
+            }
+
+            #menuBtn {
+
+                display:block;
+
+            }
+
+            #navbarMenuBtn {
+                display:none;
+            }
+
+            #settingBtn {
+
+                display:block;
+
+            }
+
+            }
+
+            @media (min-width: 992px) {
+
+            #menuBtn {
+
+                display:block;
+
+            }
+
+            #navbarMenuBtn {
+
+                display:none;
+
+            }
+
+            }
+
+            @media (min-width: 1200px) {
+
+            }
+        </style>
+
+    </head>
+
+    <body class="bg-light">
+
+        <div id="mainDiv">
+
+            <nav class="navbar navbar-expand-md navbar-dark bg-warning">
+
+                <a class="navbar-brand" href="#"><img src="mail.png" id="brandName"><span id="menuBrandName">Sky Mail</span></a>
+
+                <button class="btn btn-toggler btn-dark" id="navbarMenuToggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar1">
+
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+
+                            <button id="menuBtn" class="btn btn-outline-dark" type="button">MENU</button>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+
+
+
+                            <button class="btn btn-outline-dark dropdown-toggle" href="#" id="navbarMenuBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Menu
+                            </button>
+
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item active" href="#">Inbox</a>
+
+                                <a class="dropdown-item" href="#">Starred</a>
+
+                                <a class="dropdown-item" href="#">Important</a>
+
+                                <a class="dropdown-item" href="#">Outbox</a>
+
+                                <a class="dropdown-item" href="#">Sent</a>
+
+                                <a class="dropdown-item" href="#">Deleted</a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="#">Configure inbox</a>
+
+                                <a class="dropdown-item" href="#">Settings</a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="#">Support Page</a>
+
+                                <a class="dropdown-item" href="#">FAQ</a>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+
+                    <input style="border-color:black;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><img src="search.png" width="30px"></button>
+
+                </form>
+
+            </div>
+
+        </nav>
+
+        <div id="sideMenuDiv" class="bg-warning">
+                        <ul class="nav flex-column row">
+                            <li class="nav-item">
+                                <button style="position:relative;left:15px;" type="button" id="newEmailBtn" role="button" class="btn btn-md btn-secondary"><img src="add.png" width="30px"></button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link active">
+                                <button type="button" id="inboxBtn" role="button" class="btn-sm btn btn-secondary">Inbox</button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <button type="button" id="starredBtn" role="button" class="btn-sm btn-block btn-secondary">Starred</button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <button type="button" id="importantBtn" role="button" class="btn-sm btn-block btn-secondary">Important</button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <button type="button" id="outboxBtn" role="button" class="btn-sm btn-block btn-secondary">Outbox</button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <button type="button" id="sentBtn" role="button" class="btn-sm btn-block btn-secondary">Sent</button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <button type="button" id="spamBtn" role="button" class="btn-sm btn-block btn-secondary">Spam</button>
+                            </li>
+                            <li style="margin-top:5px;" class="nav-link">
+                                <button type="button" id="deletedBtn" role="button" class="btn-sm btn-block btn-secondary">Deleted</button>
+                            </li>
+                        </ul>
+
+                        <form>
+                            <div style="margin-right:20px;" class="form-group">
+                                <label style="color:white;" for="exampleFormControlSelect2">Select contact to email</label>
+                                <select style="width:;height:25%;" multiple class="form-control" id="exampleFormControlSelect2">
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                    <option>User</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+        <nav style="border-bottom:1px solid black;" class="navbar navbar-expand navbar-secondary bg-secondary">
+            <div class="collapse navbar-collapse" id="altMenuDiv">
+                <ul class="navbar-nav mr-auto">
+                    <li>
+                        <a class="nav-item"><button class="btn btn-secondary" id="refreshBtn" role="button"><img src="refresh.jpg" width="30px"></button></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <span class="nav-item dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary" id="moreBtn" role="button"><img src="more.png" width="30px"></button>
+                        </span>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <button class="dropdown-item">Mark all as read</button>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item disabled text-muted">Select messages to see more actions</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown" id="settingBtn">
+                        <span class="nav-item dropdown-toggle" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary" id="settingsBtn" role="button"><img src="setting.png" width="30px"></button>
+                        </span>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <a class="dropdown-item" href="#">Configure inbox</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Support Page</a>
+                            <a class="dropdown-item" href="#">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="dropdown-toggle bg-secondary" id="externalActiveDiv">
+            <button class="btn btn-sm btn-secondary" id="actInboxBtn" role="button"><h4>Inbox</h4></button>
+        </div>
+        <div class="bg-secondary container-fluid" id="externalDiv">
+            <span><button style="color:white;" class="btn" id="exitexternalDivBtn" role="button">&times;</button></span>
+            <button type="button" class="btn btn-outline-light" data-name="User" data-toggle="modal" data-target="#myModal">
+                Email
+            </button>
+                                <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div id="modalcontent" class="modal-content bg-dark">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span style="color:white;" aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body bg-dark">
+                            <label style="color:white;">Subject:</label>
+                            <input type="text" placeholder="Subject">
+                            <textarea style="" class="bg-light"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="bottom" title="This will save your message as a draft">Save as draft</button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            function fadeInOutDiv(stringSelector) {
+                $(stringSelector).click(faddingIn);
+            }
+
+            function faddingIn() {
+                $("#externalDiv").fadeIn(600);
+            }
+
+            fadeInOutDiv("#actInboxBtn");
+
+                $("#menuBtn").click(function(){
+                    $("#sideMenuDiv").fadeToggle()
+                });
+
+                $("#exitexternalDivBtn").click(function(){
+                    $("#externalDiv").fadeOut(600);
+                });
+
+                $('#myModal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget)
+                    var recipient = button.data('name')
+                    var modal = $(this)
+                    modal.find('.modal-title').text('New email to ' + recipient)
+                })
+
+        })
+
+        </script>
+
+    </body>
+
+</html>
